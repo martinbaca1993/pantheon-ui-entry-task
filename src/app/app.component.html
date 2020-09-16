@@ -1,0 +1,103 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12">
+      <!-- Nav tabs -->
+      <ul class="nav nav-pills justify-content-center">
+        <li>
+          <a class="active" id="home-tab" data-toggle="tab" href="#home">Historical weather conditions</a>
+        </li>
+        <li>
+          <a id="profile-tab" data-toggle="tab" href="#profile">Line chart</a>
+        </li>
+        <li>
+          <a id="messages-tab" data-toggle="tab" href="#hic">Heat Index Calculator</a>
+        </li>
+      </ul>
+
+      <!-- Tab panes -->
+      <div class="tab-content clearfix">
+        <div class="tab-pane active" id="home">
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="jumbotron">
+                <h1 class="col-sm-12">WEATHER IN LONDON</h1>
+
+                <table>
+                  <tr>
+                    <th>Datetime</th>
+                    <th>Weather State</th>
+                    <th>Temperature</th>
+                    <th>Min. Temperature</th>
+                    <th>Max. Temperature</th>
+                    <th>Air Pressure</th>
+                    <th>Wind Speed</th>
+                    <th>Humidity</th>
+                    <th>Visibility</th>
+                    <th>Predictability</th>
+                  </tr>
+                  <tr *ngFor='let item of weatherData'>
+                    <td>{{item.created}}</td>
+                    <td>{{item.weather_state_name}}</td>
+                    <td>{{item.the_temp  | number:'1.2-2'}} °C</td>
+                    <td>{{item.min_temp  | number:'1.2-2'}} °C</td>
+                    <td>{{item.max_temp  | number:'1.2-2'}} °C</td>
+                    <td>{{item.air_pressure  | number:'1.2-2'}} mbar</td>
+                    <td>{{item.wind_speed  | number:'1.2-2'}} mph</td>
+                    <td>{{item.humidity}} %</td>
+                    <td>{{item.visibility | number:'1.2-2'}} miles</td>
+                    <td>{{item.predictability}} %</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane" id="profile">
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="jumbotron">
+                <google-chart #chart [title]="title" [type]="type" [data]="data" [options]="options">
+                </google-chart>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane" id="hic">
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="jumbotron">
+                <h1>HEAT INDEX CALCULATOR</h1>
+                <div class="inputs">
+                  <label for="air_temperature">
+                    Air Temperature:
+                    <input id="air_temperature" type="number" placeholder="min. 26.7°C or 80°F"
+                      [formControl]='controlAirTemperature' value="{{this.temperature}}">
+                    <label for="celsia">
+                      <input #inputTemperature type="radio" id="celsia" name="type" value="celsia"
+                        (change)="onRadioButtonChange($event.target.value)" checked>
+                      °C
+                    </label>
+                    <label for="farenhait">
+                      <input type="radio" id="farenhait" name="type" value="farenhait"
+                        (change)="onRadioButtonChange($event.target.value)">
+                      °F
+                    </label>
+                  </label><br>
+
+                  <label for="humidity">
+                    Relative Humidity:
+                    <input id="humidity" type="number" placeholder="humidity in [%]" [formControl]='controlHumidity'>
+                  </label>
+
+                  <h2>Result:</h2>
+                  <p #resultHeatIndex class="result">{{this.actualHeatIndex}}</p>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

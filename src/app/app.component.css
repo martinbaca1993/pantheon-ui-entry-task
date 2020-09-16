@@ -1,0 +1,101 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.jumbotron {
+    overflow-x: auto;
+    background-color: #3482ca;
+    padding-top: 2rem !important;
+    min-height: 80vh;
+    text-align: center;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    margin: auto;
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+    text-decoration: underline;
+    font-weight: 900;
+}
+
+td, th {
+    border: 2px solid black;
+    text-align: left;
+    padding: 0.5rem;
+}
+
+th {
+    background-color: #033dfc;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+tr {
+    background-color: white;
+}
+
+.nav-pills li a {
+    background: #1f4e79;
+    color: #fff;
+    display: block;
+    line-height: 2em;
+    padding: 7px 15px;
+    border-radius: 0;
+    font-size: 20px;
+    border: none;
+    margin: 30px 2px 0;
+}
+
+ul li a {
+    text-decoration: none;
+}
+
+.nav-pills li a.active {
+    background: #3482ca;
+    border: none;
+    color: #FFF;
+    font-weight: 900;
+}
+
+google-chart {
+    margin: auto;
+    width: 100vh !important;
+    height: 60vh !important;
+}
+
+.inputs {
+    display: inline-block;
+    text-align: left;
+}
+
+.inputs h2 {
+    margin-top: 2rem;
+    font-weight: 600;
+}
+
+.inputs .result {
+    font-weight: 900;
+}
+
+.inputs h2, .inputs .result {
+    text-align: center;
+}
+
+.inputs input[type=radio] {
+    margin-left: 1rem;
+}
+
+.inputs label {
+    font-weight: 600;
+    font-size: 1.2rem;
+}

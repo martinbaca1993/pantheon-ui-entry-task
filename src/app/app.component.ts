@@ -40,7 +40,7 @@ export class AppComponent {
       if (this.T == null || this.rh == null) {
         this.actualHeatIndex = 'Please insert both values';
       } else {
-        this.checkAirTemperature(value);
+        this.checkAirTemperature(this.T);
       }
     });
 

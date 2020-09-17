@@ -56,8 +56,9 @@
           <div class="row">
             <div class="col-sm-12">
               <div class="jumbotron">
-                <google-chart #chart [title]="title" [type]="type" [data]="data" [options]="options">
-                </google-chart>
+                <div id="divChart">
+                  <canvas id="myChart"></canvas>
+                </div>
               </div>
             </div>
           </div>

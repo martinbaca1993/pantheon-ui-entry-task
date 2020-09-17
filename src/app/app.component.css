@@ -15,6 +15,7 @@ table {
     border-collapse: collapse;
     margin: auto;
     text-align: center;
+    border-radius: 5px;
 }
 
 h1 {
@@ -67,10 +68,13 @@ ul li a {
     font-weight: 900;
 }
 
-google-chart {
+#divChart {
+    background-color: white;
+    padding: 2rem;
+}
+
+#myChart {
     margin: auto;
-    width: 100vh !important;
-    height: 60vh !important;
 }
 
 .inputs {

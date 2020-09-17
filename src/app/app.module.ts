@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { HttpClientModule } from "@angular/common/http";
-import { GoogleChartsModule } from 'angular-google-charts';
 
 import { ReactiveFormsModule } from '@angular/forms';
 
@@ -14,7 +13,6 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     HttpClientModule,
-    GoogleChartsModule,
     ReactiveFormsModule
   ],
   providers: [],
